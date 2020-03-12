@@ -1,5 +1,4 @@
 # Projects
 
 ## Films Recomendation
-A ideia desse projeto é criar: Api(.NetCore3); WebSite(Vue.js); App(Xamarin) e Otimizador(C#) para recomendar filmes baseado em escolhas do usuário.
-O principal objetivo desse projeto é aplicar e melhorar meus conhecimentos de desenvolvimento em uma variedade de plataformas utilizando C#.
+The idea of this project is to create Api(.NetCore3), WebSite(Vue.js), App(Xamarin) and Optimizer(C#). To recommend movies based on user choices. The database of movies was provided by kaggle.
