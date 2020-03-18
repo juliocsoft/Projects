@@ -1,0 +1,4 @@
+FR DATA [1.0.0]
+
+- Notes
+The first version removed faulty rows, such as rows with different Id data, special characters in the title and different languages en.
