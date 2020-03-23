@@ -43,6 +43,7 @@ namespace GTSharp.Domain.Api
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             services.AddTransient<ITodoRepository, TodoRepository>();
+            services.AddTransient<IMovieRepository, MovieRepository>();
             services.AddTransient<TodoHandler, TodoHandler>();
 
             services
