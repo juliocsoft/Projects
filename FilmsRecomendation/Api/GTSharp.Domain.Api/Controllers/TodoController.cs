@@ -14,7 +14,6 @@ namespace GTSharp.Domain.Api.Controllers
 
     [ApiController]
     [Route("v1/todos")]
-    [Authorize]
     public class TodoController : ControllerBase
     {
 
@@ -24,8 +23,8 @@ namespace GTSharp.Domain.Api.Controllers
             [FromServices]ITodoRepository repository
         )
         {
-            var user = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
-            return repository.GetAll(user);
+            //var user = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
+            return repository.GetAll("kkkkkkkkkkk");
         }
 
         [Route("done")]
@@ -111,7 +110,7 @@ namespace GTSharp.Domain.Api.Controllers
             [FromServices]TodoHandler handler
         )
         {
-            command.User = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
+            //command.User = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
             return (GenericCommandResult)handler.Handle(command);
         }
 
