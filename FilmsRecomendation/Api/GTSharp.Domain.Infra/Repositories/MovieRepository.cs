@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using GTSharp.Domain.Entities;
 using GTSharp.Domain.Repositories;
@@ -20,7 +19,7 @@ namespace GTSharp.Domain.Infra.Repositories
 
         public IEnumerable<Movie> GetAll()
         {
-            return _context.Movies
+            return _context.Movie
                .AsNoTracking()
                .Where(MovieQueries.GetAll())
                .OrderBy(x => x.OriginalTitle);

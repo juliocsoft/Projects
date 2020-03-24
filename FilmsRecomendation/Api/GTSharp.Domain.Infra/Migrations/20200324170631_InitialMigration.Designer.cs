@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GTSharp.Domain.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200323193133_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200324170631_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,32 +23,28 @@ namespace GTSharp.Domain.Infra.Migrations
 
             modelBuilder.Entity("GTSharp.Domain.Entities.Genre", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdGenre")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("IdGenre")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("MovieId")
+                    b.Property<int?>("MovieIdMovie")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("nvarchar(400)")
+                        .HasMaxLength(400);
 
-                    b.HasKey("Id");
+                    b.HasKey("IdGenre");
 
-                    b.HasIndex("IdGenre");
-
-                    b.HasIndex("MovieId");
+                    b.HasIndex("MovieIdMovie");
 
                     b.ToTable("Genre");
                 });
 
             modelBuilder.Entity("GTSharp.Domain.Entities.Movie", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdMovie")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -56,20 +52,20 @@ namespace GTSharp.Domain.Infra.Migrations
                     b.Property<decimal>("Budget")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("IdMovie")
-                        .HasColumnType("int");
-
                     b.Property<string>("OriginalTitle")
-                        .HasColumnType("varchar(300)");
+                        .HasColumnType("nvarchar(400)")
+                        .HasMaxLength(400);
 
                     b.Property<string>("Overview")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(3000)")
+                        .HasMaxLength(3000);
 
                     b.Property<decimal>("Popularity")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("PosterPath")
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
@@ -80,43 +76,16 @@ namespace GTSharp.Domain.Infra.Migrations
                     b.Property<double>("VoteCount")
                         .HasColumnType("float");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("OriginalTitle");
+                    b.HasKey("IdMovie");
 
                     b.ToTable("Movie");
                 });
 
-            modelBuilder.Entity("GTSharp.Domain.Entities.TodoItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Done")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("varchar(160)");
-
-                    b.Property<string>("User")
-                        .HasColumnType("varchar(120)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("User");
-
-                    b.ToTable("Todo");
-                });
-
             modelBuilder.Entity("GTSharp.Domain.Entities.Genre", b =>
                 {
-                    b.HasOne("GTSharp.Domain.Entities.Movie", null)
+                    b.HasOne("GTSharp.Domain.Entities.Movie", "Movie")
                         .WithMany("Genres")
-                        .HasForeignKey("MovieId");
+                        .HasForeignKey("MovieIdMovie");
                 });
 #pragma warning restore 612, 618
         }

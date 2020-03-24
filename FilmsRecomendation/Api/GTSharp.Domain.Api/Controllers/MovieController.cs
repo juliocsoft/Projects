@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using GTSharp.Domain.Commands.Input;
 using GTSharp.Domain.Entities;
 using GTSharp.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
