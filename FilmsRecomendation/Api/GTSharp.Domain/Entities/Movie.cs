@@ -1,17 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace GTSharp.Domain.Entities
 {
     public class Movie
     {
-        public int Id { get; private set; }
+        [Key]
         public int IdMovie { get; private set; }
         public decimal Budget { get; private set; }
+        [MaxLength(400)]
         public string OriginalTitle { get; private set; }
+        [MaxLength(3000)]
         public string Overview { get; private set; }
         public decimal Popularity { get; private set; }
+        [MaxLength(100)]
         public string PosterPath { get; private set; }
         public DateTime ReleaseDate { get; private set; }
         public double VoteAverage { get; private set; }
