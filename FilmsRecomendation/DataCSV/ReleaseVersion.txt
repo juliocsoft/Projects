@@ -1,8 +1,17 @@
+FR Data [1.0.1]
+
+- Notes
+
+.Update Query ( Movie )
+.Update Meta Data ( Movie)
+.Isolate Original Overview  
+
+---------------------------------------------------------
 FR Data [1.0.0]
 
 - Notes
 
 .The first version of Data
-.Insert Querys ( Movie and Genre )
+.Insert Queries ( Movie and Genre )
 .Meta Data (Movie and Genre )
 .Original KeyWords Kaggle (Need tratament) 
