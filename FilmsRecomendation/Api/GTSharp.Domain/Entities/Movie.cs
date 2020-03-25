@@ -1,17 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GTSharp.Domain.Entities
 {
     public class Movie
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Required]
         public int IdMovie { get; private set; }
         public decimal Budget { get; private set; }
         [MaxLength(400)]
         public string OriginalTitle { get; private set; }
-        [MaxLength(3000)]
         public string Overview { get; private set; }
         public decimal Popularity { get; private set; }
         [MaxLength(100)]

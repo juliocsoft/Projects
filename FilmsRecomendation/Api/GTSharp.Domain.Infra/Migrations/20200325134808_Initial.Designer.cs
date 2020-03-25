@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GTSharp.Domain.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200324170631_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20200325134808_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,9 +24,7 @@ namespace GTSharp.Domain.Infra.Migrations
             modelBuilder.Entity("GTSharp.Domain.Entities.Genre", b =>
                 {
                     b.Property<int>("IdGenre")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<int?>("MovieIdMovie")
                         .HasColumnType("int");
@@ -45,9 +43,7 @@ namespace GTSharp.Domain.Infra.Migrations
             modelBuilder.Entity("GTSharp.Domain.Entities.Movie", b =>
                 {
                     b.Property<int>("IdMovie")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Budget")
                         .HasColumnType("decimal(18,2)");
@@ -57,8 +53,7 @@ namespace GTSharp.Domain.Infra.Migrations
                         .HasMaxLength(400);
 
                     b.Property<string>("Overview")
-                        .HasColumnType("nvarchar(3000)")
-                        .HasMaxLength(3000);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Popularity")
                         .HasColumnType("decimal(18,2)");

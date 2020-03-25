@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GTSharp.Domain.Infra.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,11 +11,10 @@ namespace GTSharp.Domain.Infra.Migrations
                 name: "Movie",
                 columns: table => new
                 {
-                    IdMovie = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdMovie = table.Column<int>(nullable: false),
                     Budget = table.Column<decimal>(nullable: false),
                     OriginalTitle = table.Column<string>(maxLength: 400, nullable: true),
-                    Overview = table.Column<string>(maxLength: 3000, nullable: true),
+                    Overview = table.Column<string>(nullable: true),
                     Popularity = table.Column<decimal>(nullable: false),
                     PosterPath = table.Column<string>(maxLength: 100, nullable: true),
                     ReleaseDate = table.Column<DateTime>(nullable: false),
@@ -31,8 +30,7 @@ namespace GTSharp.Domain.Infra.Migrations
                 name: "Genre",
                 columns: table => new
                 {
-                    IdGenre = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdGenre = table.Column<int>(nullable: false),
                     Name = table.Column<string>(maxLength: 400, nullable: true),
                     MovieIdMovie = table.Column<int>(nullable: true)
                 },
