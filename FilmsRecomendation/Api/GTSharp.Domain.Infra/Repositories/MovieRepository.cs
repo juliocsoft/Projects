@@ -21,31 +21,7 @@ namespace GTSharp.Domain.Infra.Repositories
         {
             return _context.Movie
                .AsNoTracking()
-               .Where(MovieQueries.GetAll())
-               .OrderBy(x => x.OriginalTitle);
+               .Include(o => o.Genres);
         }
-
-        // public IEnumerable<TodoItem> GetAll(string user)
-        // {
-        //     return _context.Todos
-        //        .AsNoTracking()
-        //        .Where(TodoQueries.GetAll(user))
-        //        .OrderBy(x => x.Date);
-        // }
-
-        // public IEnumerable<TodoItem> GetAllDone(string user)
-        // {
-        //     return _context.Todos
-        //         .AsNoTracking()
-        //         .Where(TodoQueries.GetAllDone(user))
-        //         .OrderBy(x => x.Date);
-        // }
-
-        // public TodoItem GetById(Guid id, string user)
-        // {
-        //     return _context.Todos
-        //         .FirstOrDefault(x => x.Id == id && x.User == user);
-        // }
-
     }
 }

@@ -13,6 +13,7 @@ namespace GTSharp.Domain.Api.Controllers
         [HttpGet]
         public IEnumerable<Movie> GetAll([FromServices]IMovieRepository repository)
         {
+            var movies = repository.GetAll();
             return repository.GetAll();
         }
     }

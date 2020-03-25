@@ -13,7 +13,6 @@ namespace GTSharp.Domain.Entities
         public decimal Budget { get; private set; }
         [MaxLength(400)]
         public string OriginalTitle { get; private set; }
-        public string Overview { get; private set; }
         public decimal Popularity { get; private set; }
         [MaxLength(100)]
         public string PosterPath { get; private set; }
@@ -22,12 +21,11 @@ namespace GTSharp.Domain.Entities
         public double VoteCount { get; private set; }
         public List<Genre> Genres { get; set; }
 
-        public Movie(int idMovie, decimal budget, string originalTitle, string overview, decimal popularity, string posterPath, DateTime releaseDate, double voteAverage, double voteCount)
+        public Movie(int idMovie, decimal budget, string originalTitle, decimal popularity, string posterPath, DateTime releaseDate, double voteAverage, double voteCount)
         {
             IdMovie = idMovie;
             Budget = budget;
             OriginalTitle = originalTitle;
-            Overview = overview;
             Popularity = popularity;
             PosterPath = posterPath;
             ReleaseDate = releaseDate;
