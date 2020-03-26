@@ -10,9 +10,11 @@ namespace GTSharp.Domain.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
         public int IdMovie { get; private set; }
+        [Column(TypeName = "decimal(10,0)")]
         public decimal Budget { get; private set; }
         [MaxLength(400)]
         public string OriginalTitle { get; private set; }
+        [Column(TypeName = "decimal(10,0)")]
         public decimal Popularity { get; private set; }
         [MaxLength(100)]
         public string PosterPath { get; private set; }

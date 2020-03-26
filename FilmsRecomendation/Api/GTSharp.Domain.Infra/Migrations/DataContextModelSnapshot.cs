@@ -22,7 +22,9 @@ namespace GTSharp.Domain.Infra.Migrations
             modelBuilder.Entity("GTSharp.Domain.Entities.Genre", b =>
                 {
                     b.Property<int>("IdGenre")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("MovieIdMovie")
                         .HasColumnType("int");
@@ -44,14 +46,14 @@ namespace GTSharp.Domain.Infra.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Budget")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10,0)");
 
                     b.Property<string>("OriginalTitle")
                         .HasColumnType("nvarchar(400)")
                         .HasMaxLength(400);
 
                     b.Property<decimal>("Popularity")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10,0)");
 
                     b.Property<string>("PosterPath")
                         .HasColumnType("nvarchar(100)")
@@ -73,17 +75,18 @@ namespace GTSharp.Domain.Infra.Migrations
 
             modelBuilder.Entity("GTSharp.Domain.Entities.Overview", b =>
                 {
-                    b.Property<int>("IdOverview")
-                        .HasColumnType("int");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(400)")
-                        .HasMaxLength(400);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("MovieIdMovie")
                         .HasColumnType("int");
 
-                    b.HasKey("IdOverview");
+                    b.HasKey("Id");
 
                     b.HasIndex("MovieIdMovie");
 

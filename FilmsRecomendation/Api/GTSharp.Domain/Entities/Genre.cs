@@ -5,8 +5,7 @@ namespace GTSharp.Domain.Entities
 {
     public class Genre
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Required]
+        [Key]
         public int IdGenre { get; private set; }
         [MaxLength(400)]
         public string Name { get; private set; }
