@@ -1,3 +1,11 @@
+FR Data [1.0.2]
+
+- Notes
+
+.Add file OverviewInsertQuery
+.Remove manual Id in model Genre and Overview
+
+---------------------------------------------------------
 FR Data [1.0.1]
 
 - Notes
