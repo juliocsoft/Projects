@@ -21,7 +21,8 @@ namespace GTSharp.Domain.Infra.Repositories
         {
             return _context.Movie
                .AsNoTracking()
-               .Include(o => o.Genres);
+               .Include(o => o.Genres)
+               .Include(o => o.Overviews);
         }
     }
 }

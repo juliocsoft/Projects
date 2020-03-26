@@ -20,6 +20,7 @@ namespace GTSharp.Domain.Entities
         public double VoteAverage { get; private set; }
         public double VoteCount { get; private set; }
         public List<Genre> Genres { get; set; }
+        public List<Overview> Overviews { get; set; }
 
         public Movie(int idMovie, decimal budget, string originalTitle, decimal popularity, string posterPath, DateTime releaseDate, double voteAverage, double voteCount)
         {
@@ -32,6 +33,7 @@ namespace GTSharp.Domain.Entities
             VoteAverage = voteAverage;
             VoteCount = voteCount;
             Genres = new List<Genre>();
+            Overviews = new List<Overview>();
         }
     }
 }
