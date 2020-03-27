@@ -7,14 +7,10 @@ namespace GTSharp.Domain.Entities
     {
         [Key]
         public int IdGenre { get; private set; }
+
         [MaxLength(400)]
         public string Name { get; private set; }
+         
         public Movie Movie { get; set; }
-
-        public Genre(int idGenre, string name)
-        {
-            IdGenre = idGenre;
-            Name = name;
-        }
     }
 }

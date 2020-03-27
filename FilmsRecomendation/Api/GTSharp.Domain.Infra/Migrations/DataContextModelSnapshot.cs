@@ -75,7 +75,7 @@ namespace GTSharp.Domain.Infra.Migrations
 
             modelBuilder.Entity("GTSharp.Domain.Entities.Overview", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdOverview")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -86,7 +86,7 @@ namespace GTSharp.Domain.Infra.Migrations
                     b.Property<int?>("MovieIdMovie")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdOverview");
 
                     b.HasIndex("MovieIdMovie");
 

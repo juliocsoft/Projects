@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GTSharp.Domain.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200326215503_Pack001_InitialMigration")]
-    partial class Pack001_InitialMigration
+    [Migration("20200327020830_Pack001_Initial")]
+    partial class Pack001_Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -77,7 +77,7 @@ namespace GTSharp.Domain.Infra.Migrations
 
             modelBuilder.Entity("GTSharp.Domain.Entities.Overview", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdOverview")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -88,7 +88,7 @@ namespace GTSharp.Domain.Infra.Migrations
                     b.Property<int?>("MovieIdMovie")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdOverview");
 
                     b.HasIndex("MovieIdMovie");
 

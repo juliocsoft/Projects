@@ -6,9 +6,9 @@ namespace GTSharp.Domain.Queries
 {
     public static class MovieQueries
     {
-        public static Expression<Func<Movie, bool>> GetAll()
+        public static Expression<Func<Movie, bool>> ExpById(int id)
         {
-            return o => o.IdMovie == o.IdMovie;
+            return o => o.IdMovie == id;
         }
     }
 }

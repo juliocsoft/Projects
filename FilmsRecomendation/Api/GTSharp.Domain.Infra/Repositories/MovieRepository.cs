@@ -17,12 +17,39 @@ namespace GTSharp.Domain.Infra.Repositories
             _context = context;
         }
 
+        public IEnumerable<Movie> Get()
+        {
+            return _context.Movie.AsNoTracking();
+        }
+
         public IEnumerable<Movie> GetAll()
         {
             return _context.Movie
-               .AsNoTracking()
                .Include(o => o.Genres)
-               .Include(o => o.Overviews);
+               .Include(o => o.Overviews)
+               .AsNoTracking();
+        }
+
+        public IEnumerable<Movie> GetMoviesWithoutOverview()
+        {
+            return _context.Movie
+               .Include(o => o.Genres)
+               .AsNoTracking();
+        }
+
+        public IEnumerable<Movie> GetMoviesWithoutGenre()
+        {
+            return _context.Movie
+               .Include(o => o.Overviews)
+               .AsNoTracking();
+        }
+
+        public Movie GetById(int id)
+        {
+            return _context.Movie
+               .Include(o => o.Genres)
+               .Include(o => o.Overviews)
+               .FirstOrDefault(MovieQueries.ExpById(id));
         }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GTSharp.Domain.Infra.Migrations
 {
-    public partial class Pack001_InitialMigration : Migration
+    public partial class Pack001_Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,14 +49,14 @@ namespace GTSharp.Domain.Infra.Migrations
                 name: "Overview",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    IdOverview = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(nullable: true),
                     MovieIdMovie = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Overview", x => x.Id);
+                    table.PrimaryKey("PK_Overview", x => x.IdOverview);
                     table.ForeignKey(
                         name: "FK_Overview_Movie_MovieIdMovie",
                         column: x => x.MovieIdMovie,
