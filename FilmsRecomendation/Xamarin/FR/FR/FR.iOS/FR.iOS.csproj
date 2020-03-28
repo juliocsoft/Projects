@@ -5,15 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F19D9656-12C1-4912-8CB4-568A3BF153D8}</ProjectGuid>
+    <ProjectGuid>{DA4FB03D-C70D-4D48-8C6E-8491AB894B7B}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FilmRecomendation.iOS</RootNamespace>
+    <RootNamespace>FR.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>FilmRecomendation.iOS</AssemblyName>
+    <AssemblyName>FR.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ProvisioningType>automatic</ProvisioningType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -122,14 +123,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\FilmRecomendation\FilmRecomendation.csproj">
-      <Project>{07AD8FCE-2C0A-4AD2-B230-6E17E5B2879C}</Project>
-      <Name>FilmRecomendation</Name>
+    <ProjectReference Include="..\FR\FR.csproj">
+      <Project>{CC8CE26F-3267-4C70-80F2-4FB3FBB814DB}</Project>
+      <Name>FR</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FilmRecomendation
+namespace FR
 {
     public partial class App : Application
     {
