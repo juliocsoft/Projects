@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace FilmRecomendation.iOS
+namespace FR.iOS
 {
     public class Application
     {
