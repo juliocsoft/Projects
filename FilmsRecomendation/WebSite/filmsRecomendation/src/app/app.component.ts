@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './components/shared/nav/nav.component.html',
 })
 export class AppComponent {
   title = 'filmsRecomendation';

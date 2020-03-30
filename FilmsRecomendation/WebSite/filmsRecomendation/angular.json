@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "filmsRecomendation": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "filmsRecomendation"
+    }
+  },
+  "defaultProject": "filmsRecomendation",
+  "cli": {
+    "analytics": "0a9a505f-1019-4f08-803e-2f22a7a87ae8"
+  }
 }
