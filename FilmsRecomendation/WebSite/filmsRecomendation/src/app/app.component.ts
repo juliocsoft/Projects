@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './components/shared/nav/nav.component.html',
+  template: '<router-outlet></router-outlet>'
 })
 export class AppComponent {
   title = 'filmsRecomendation';
